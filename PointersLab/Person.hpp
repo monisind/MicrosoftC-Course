@@ -11,29 +11,29 @@
 
 #endif /* Person_hpp */
 
-using namespace std;
+//using namespace std;
 #include <stdio.h>
 #include <string>
 
 class Person
 {
 private:
-    string name;
-    int age;
-    double height;
-    double weight;
+    std::string m_name;
+    int m_age;
+    double m_height;
+    double m_weight;
     
 public:
     Person();
     
-    Person(string name, int age, double height, double weight);
+    Person(const std::string &name, int age, double height, double weight);
     
     ~Person();
     
-    string getName();
-    int getAge();
-    double getHeight();
-    double getWeight();
+    std::string  getName() const;
+    int getAge() const;
+    double getHeight() const;
+    double getWeight() const;
     
-    void setName(string name);
+    void setName(std::string  name);
 };

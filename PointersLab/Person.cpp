@@ -7,38 +7,40 @@
 //
 
 #include "Person.hpp"
+using std::string;
 
 Person:: Person(){
 
 }
 
-Person::Person(string name, int age, double height, double weight){
-    this->name = name;
-    this->age = age;
-    this->height = height;
-    this->weight = weight;
+Person::Person(const string &name, int age, double height, double weight)
+: m_name(name)
+, m_age(age)
+, m_height(height)
+, m_weight(weight)
+{
 }
 
 Person::~Person(){
-    
+
 }
 
-string Person::getName(){
-    return this->name;
+string Person::getName() const{
+    return m_name;
 }
 
 void Person::setName(string name){
-    this->name = name;
+    m_name = name;
 }
 
-int Person::getAge(){
-    return this->age;
+int Person::getAge() const{
+    return m_age;
 }
 
-double Person::getHeight(){
-    return this->height;
+double Person::getHeight() const{
+    return m_height;
 }
 
-double Person::getWeight(){
-    return this->weight;
+double Person::getWeight() const{
+    return m_weight;
 }
